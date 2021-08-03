@@ -1,6 +1,5 @@
-resource "aws_vpc" "external_by_terraform" {
+resource "aws_security_group" "external_by_terraform" {
   name = "allow_inbound"
-
 
   ingress {
     description = "TLS"
@@ -9,7 +8,7 @@ resource "aws_vpc" "external_by_terraform" {
     protocol    = "tcp"
     cidr_blocks = ["50.194.68.230/32"]
   }
-
+  
   ingress {
     description = "TLS"
     from_port   = 3306
@@ -25,11 +24,14 @@ resource "aws_vpc" "external_by_terraform" {
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
+  
   ingress {
+      description = "TLS"
     from_port   = 443
     to_port     = 443
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
+
   }
   egress {
     from_port   = 0

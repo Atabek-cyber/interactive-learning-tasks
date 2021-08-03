@@ -3,14 +3,15 @@ resource "aws_vpc" "external_by_terraform" {
 
 
   ingress {
-      description ="TLS"
+    description = "TLS"
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
     cidr_blocks = ["50.194.68.230/32"]
   }
+
   ingress {
-      description ="TLS"
+    description = "TLS"
     from_port   = 3306
     to_port     = 3306
     protocol    = "tcp"
@@ -18,7 +19,7 @@ resource "aws_vpc" "external_by_terraform" {
 
   }
   ingress {
-      description ="TLS"
+    description = "TLS"
     from_port   = 80
     to_port     = 80
     protocol    = "tcp"
@@ -33,6 +34,7 @@ resource "aws_vpc" "external_by_terraform" {
   egress {
     from_port   = 0
     to_port     = 0
+    protocol = "-1"
     cidr_blocks = ["0.0.0.0/0"]
   }
 }

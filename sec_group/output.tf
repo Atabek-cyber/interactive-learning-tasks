@@ -8,6 +8,6 @@ output "owner_id" {
 output "arn" {
   value = "aws_vpc.external_by_terraform.arn"
 }
- output "region"{
-     value = "us-east-1"
- }
+output "region" {
+  value = "us-east-1"
+}

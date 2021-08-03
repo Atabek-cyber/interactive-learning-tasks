@@ -14,7 +14,7 @@ resource "aws_security_group" "external_by_terraform" {
     from_port   = 3306
     to_port     = 3306
     protocol    = "tcp"
-    cidr_blocks = ["50.194.68.230/32"]
+    cidr_blocks = ["50.194.68.231/32"]
 
   }
   ingress {

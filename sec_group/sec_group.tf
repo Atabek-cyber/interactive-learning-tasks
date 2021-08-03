@@ -4,7 +4,6 @@ resource "aws_vpc" "external_by_terraform" {
   description = "Allow TLS inbound traffic"
 }
 
-
   ingress {
    description = "TLS"
     from_port   = 22
